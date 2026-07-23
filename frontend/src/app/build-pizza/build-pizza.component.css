@@ -1,0 +1,74 @@
+.container {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+}
+
+.top-text {
+    margin-bottom: 20px;
+}
+
+.pizza-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pizza-table th,
+.pizza-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.ingredient-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.selection-row td {
+    padding: 20px 10px;
+}
+
+.selection-label {
+    font-weight: 600;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+select {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #ffc107;
+}
+
+.build-btn {
+    background: black;
+    color: #ffc107;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.build-btn:hover {
+    background: #333;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #ffc107;
+}

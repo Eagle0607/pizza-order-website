@@ -1,0 +1,127 @@
+<div class="container">
+
+    <p class="top-text">
+
+        Pizzeria now gives you options to build your own pizza.
+        Customize your pizza by choosing ingredients from the list given below
+
+    </p>
+
+    <table class="pizza-table">
+
+        <tr>
+            <th>Image</th>
+            <th>Ingredient</th>
+            <th>Price</th>
+            <th>Add</th>
+        </tr>
+
+        <tr *ngFor="let item of ingredients">
+
+            <td>
+                <img [src]="item.image" class="ingredient-img">
+            </td>
+
+            <td>{{item.name}}</td>
+
+            <td>₹{{item.price}}</td>
+
+            <td>
+                <input type="checkbox" (change)="toggleIngredient($event,item)">
+            </td>
+
+        </tr>
+
+
+        <tr class="selection-row">
+
+            <td colspan="4">
+
+                <label>
+                    Select Crust <span class="required">*</span>
+                </label>
+
+                <select [(ngModel)]="selectedCrust" (change)="selectCrust(selectedCrust)">
+
+                    <option [ngValue]="null">Select Crust</option>
+
+                    <option *ngFor="let c of crusts" [ngValue]="c">
+                        {{c.name}} - ₹{{c.price}}
+                    </option>
+
+                </select>
+
+            </td>
+
+        </tr>
+
+
+        <tr class="selection-row">
+
+            <td colspan="4">
+
+                <label>
+                    Select Cheese <span class="required">*</span>
+                </label>
+
+                <select [(ngModel)]="selectedCheese" (change)="selectCheese(selectedCheese)">
+
+                    <option [ngValue]="null">Select Cheese</option>
+
+                    <option *ngFor="let ch of cheeses" [ngValue]="ch">
+                        {{ch.name}} - ₹{{ch.price}}
+                    </option>
+
+                </select>
+
+            </td>
+
+        </tr>
+
+
+        <tr class="selection-row">
+
+            <td colspan="4">
+
+                <label>
+                    Select Sauce <span class="required">*</span>
+                </label>
+
+                <select [(ngModel)]="selectedSauce" (change)="selectSauce(selectedSauce)">
+
+                    <option [ngValue]="null">Select Sauce</option>
+
+                    <option *ngFor="let s of sauces" [ngValue]="s">
+                        {{s.name}} - ₹{{s.price}}
+                    </option>
+
+                </select>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td colspan="4">
+
+                <h3>Total Cost : ₹ {{totalCost}}</h3>
+
+                <button class="build-btn" (click)="buildPizza()">
+
+                    Build Ur Pizza
+
+                </button>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <div class="footer">
+        Copyrights @ 2017 Pizzeria. All rights reserved
+    </div>
+
+</div>

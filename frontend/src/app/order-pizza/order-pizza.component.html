@@ -1,0 +1,46 @@
+<div class="pizza-container">
+
+     <div class="pizza-card" *ngFor="let pizza of pizzas">
+
+          <div class="pizza-left">
+
+               <h3>{{pizza.name}}</h3>
+
+               <div class="type-indicator" [ngClass]="pizza.type === 'veg' ? 'veg' : 'nonveg'">
+               </div>
+
+               <h4>₹{{pizza.price}}.00</h4>
+
+               <p class="description">
+                    {{pizza.description}}
+               </p>
+
+               <p>
+                    <b>Ingredients :</b> {{pizza.ingredients}}
+               </p>
+
+               <p>
+                    <b>Toppings :</b> {{pizza.toppings}}
+               </p>
+
+          </div>
+
+
+          <div class="pizza-right">
+
+               <img [src]="pizza.image">
+
+               <button class="cart-btn" (click)="addToCart(pizza)">
+                    Add to Cart
+               </button>
+
+          </div>
+
+     </div>
+
+</div>
+
+
+<div class="footer">
+     Copyrights @ 2017 Pizzeria. All rights reserved
+</div>
